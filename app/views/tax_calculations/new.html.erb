@@ -1,0 +1,21 @@
+<%= form_tag tax_calculation_path, method: :post do %>
+  <div style="display: block;">
+    <%= label_tag :subtotal %>
+    <%= number_field_tag :subtotal %>
+  </div>
+  <div style="display: block;">
+    <%= label_tag :promo %>
+    <%= text_field_tag :promo %>
+  </div>
+  <div style="display: block;">
+    <%= label_tag :tax_exempt %>
+    <%= check_box_tag :tax_exempt %>
+  </div>
+  <div style="display: block;">
+    <%= label_tag :state %>
+    <%= select_tag :state, options_for_select(StateTaxRates::ALL_RATES.keys) %>
+  </div>
+  <div style="display: block;">
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
